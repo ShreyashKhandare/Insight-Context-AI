@@ -11,6 +11,14 @@ import gc
 import time
 import shutil
 
+# Bridge Streamlit Secrets to Environment Variables
+if "GEMINI_API_KEY" in st.secrets:
+    os.environ["GEMINI_API_KEY"] = st.secrets["GEMINI_API_KEY"]
+if "GROQ_API_KEY" in st.secrets:
+    os.environ["GROQ_API_KEY"] = st.secrets["GROQ_API_KEY"]
+if "WANDB_API_KEY" in st.secrets:
+    os.environ["WANDB_API_KEY"] = st.secrets["WANDB_API_KEY"]
+
 # Add project root to path
 project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, project_root)
