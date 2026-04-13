@@ -12,3 +12,4 @@ langchain-groq
 tiktoken
 datasets
 ragas
+wandb
